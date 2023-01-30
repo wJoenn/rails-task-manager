@@ -1,0 +1,33 @@
+<div id="show">
+  <div id="task">
+    <h2><%= @task.title %></h2>
+    <p class="details"><%= @task.details %></p>
+    <div>
+      <%= link_to_if @task.completed, content_tag(:i, "", class: "fa-solid fa-square-check green"), completed_task_path(@task.id), data: { turbo_method: :patch } do %>
+        <%= link_to content_tag(:i, "", class: "fa-solid fa-square-xmark red"), completed_task_path(@task.id), data: { turbo_method: :patch } %>
+      <% end %>
+      <span>Completed</span>
+    </div>
+  </div>
+
+  <ul id="links">
+    <li>
+      <%= link_to edit_task_path do %>
+        <i class="fa-solid fa-pen-to-square plus"></i>
+        Update task
+      <% end %>
+    </li>
+    <li>
+      <%= link_to task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"} do %>
+        <i class="fa-regular fa-square-minus plus"></i>
+        Delete task
+      <% end %>
+    </li>
+    <li>
+      <%= link_to tasks_path do %>
+        <i class="fa-solid fa-clock-rotate-left plus"></i>
+        Back to list
+      <% end %>
+    </li>
+  </ul>
+</div>

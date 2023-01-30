@@ -1,15 +1,80 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  margin: 5vh 0 3vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(50, 127, 190);
+  font-weight: 500;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.plus {
+  font-size: 1rem;
+}
+
+#task {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.452);
+}
+.details {
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.404);
+  background-color: rgba(211, 211, 211, 0.76);
+  margin: 15px 0;
+}
+
+#links {
+  padding-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.452);
+}
+
+form input, form textarea {
+  padding: 7px 15px;
+  box-shadow: 0 0 5px grey;
+  border: 1px solid rgba(128, 128, 128, 0.493);
+  border-radius: 3px;
+}
+
+form #submit {
+  width: max-content;
+  background-color: rgb(50, 127, 190);
+  color: snow;
+}

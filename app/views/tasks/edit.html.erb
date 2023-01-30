@@ -1,0 +1,10 @@
+<div id="edit">
+  <%= render "form", task: @task %>
+
+  <div id="links">
+    <%= link_to task_path(@task.id) do %>
+      <i class="fa-solid fa-clock-rotate-left plus"></i>
+      Back to task
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div id="index">
+  <ul id="task">
+    <% @tasks.each do |t| %>
+      <li class="task">
+        <%= link_to_if t.completed, content_tag(:i, "", class: "fa-solid fa-square-check green"), completed_task_path(t.id), data: { turbo_method: :patch } do %>
+          <%= link_to content_tag(:i, "", class: "fa-solid fa-square-xmark red"), completed_task_path(t.id), data: { turbo_method: :patch } %>
+        <% end %>
+        <%= link_to t.title, task_path(t.id) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div id="links">
+    <%= link_to new_task_path do %>
+      <i class="fa-solid fa-plus plus"></i>
+      Create Task
+    <% end %>
+  </div>
+</div>
